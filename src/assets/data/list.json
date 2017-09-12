@@ -1,0 +1,59 @@
+{
+  "ret": "0",
+  "msg": "操作成功",
+  "data": {
+    "count": "3",
+    "list": [
+      {
+        "id": "1",
+        "type":"1",
+        "portrait":"http://7xp9qs.com1.z0.glb.clouddn.com/57ee0889dd509.jpg",
+        "user": "admin",
+        "time":"08-30 11:10",
+        "look_cot":5,
+        "title": "NAND闪存供不应求 三星计划再投资186亿美元",
+        "content":"腾讯科技讯 据外媒报道，本周二，三星电子发布消息称，公司将在韩国投资至少21.4万亿韩元（约合186.3亿美元），以巩固自己在记忆芯片和下一代智能手机显示屏市场的统治地位。做为世界最大的记忆芯片生产商，三星将在 ...",
+        "love_num": "103",
+        "cate_id": "2",
+        "brand_id": "444",
+        "doyen_name": "你若盛开清风自来",
+        "logo": "http://7xp9qs.com1.z0.glb.clouddn.com/5819a1619698f.png",
+        "islove": "0"
+      },
+      {
+        "id": "1",
+        "type":"2",
+        "portrait":"http://7xp9qs.com1.z0.glb.clouddn.com/57ee0889dd509.jpg",
+        "user": "admin",
+        "time":"08-30 11:10",
+        "look_cot":5,
+        "title": "NAND闪存供不应求 三星计划再投资186亿美元",
+        "content":"腾讯科技讯 据外媒报道，本周二，三星电子发布消息称，公司将在韩国投资至少21.4万亿韩元（约合186.3亿美元），以巩固自己在记忆芯片和下一代智能手机显示屏市场的统治地位。做为世界最大的记忆芯片生产商，三星将在 ...",
+        "love_num": "103",
+        "cate_id": "2",
+        "brand_id": "444",
+        "doyen_name": "你若盛开清风自来",
+        "logo": "http://7xp9qs.com1.z0.glb.clouddn.com/5819a1619698f.png",
+        "islove": "0"
+      },
+      {
+        "id": "1",
+        "type":"3",
+        "portrait":"http://7xp9qs.com1.z0.glb.clouddn.com/57ee0889dd509.jpg",
+        "user": "admin",
+        "time":"08-30 11:10",
+        "look_cot":5,
+        "title": "NAND闪存供不应求 三星计划再投资186亿美元",
+        "content":"腾讯科技讯 据外媒报道，本周二，三星电子发布消息称，公司将在韩国投资至少21.4万亿韩元（约合186.3亿美元），以巩固自己在记忆芯片和下一代智能手机显示屏市场的统治地位。做为世界最大的记忆芯片生产商，三星将在 ...",
+        "love_num": "103",
+        "cate_id": "2",
+        "brand_id": "444",
+        "doyen_name": "你若盛开清风自来",
+        "logo": "http://7xp9qs.com1.z0.glb.clouddn.com/5819a1619698f.png",
+        "islove": "0"
+      }
+    ],
+    "pagecount": "5"
+  },
+  "timestamp": 1480405338
+}
