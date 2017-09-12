@@ -34,7 +34,7 @@
 # 安装
 npm install
 
-# 调试环境 serve with hot reload at http://localhost:8080/module/index.html
+# 调试环境 serve with hot reload at http://localhost:8181/module/index.html
 npm run dev
 
 # 生产环境 build for production with minification
@@ -44,7 +44,7 @@ npm run build
 执行 npm run dev npm run build  前请修改config/configure.js中 ProjectDirectory 的值 改为项目名称 启动路径为默认需要打开的页面
 怎么发布就随你啦！
 ```
-本地默认访问端口为8080，需要更改的童鞋请到项目根目录文件`config.js`修改。
+本地默认访问端口为8181，需要更改的童鞋请到项目根目录文件`config.js`修改。
 
 ###目录结构
 ***
@@ -108,7 +108,7 @@ npm run build
 就是我们访问时的地址：
 
 ``` stylus
-http://localhost:8080/module/index.html
+http://localhost:8181/module/index.html
 ```
 这里一定要记住，在`module`里下级文件夹，一个文件夹就是一个html，`js``vue template` 都统一放在当前文件夹里，当然你也可以继续放其他的资源，例如css、图片等，webpack会打包到当前页面里。
 如果项目不需要这个页面了，可以直接把这个文件夹直接删除掉，干净项目，干活也开心。
@@ -257,74 +257,7 @@ for (var pathname in pages) {
 ``` bash
 # 【webpack.prod.conf.js】主要是编译的全局设置，主要是增加了以下代码，已经增加在JS文件里，这里只是做一个补充说明，具体请看`build/webpack.prod.conf.js`。
 
-注释了部分源码
-/*new HtmlWebpackPlugin({
-      filename: config.build.index,
-      template: 'index.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    }),*/
 
-    // split vendor js into its own file
-    /*new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module, count) {
-        // any required modules inside node_modules are extracted to vendor
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
-          ) === 0
-        )
-      }
-    }),*/
-    // extract webpack runtime and module manifest to its own file in order to
-    // prevent vendor hash from being updated whenever app bundle is updated
-    /*new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      chunks: ['vendor']
-    }),*/
-修改为
-new webpack.optimize.CommonsChunkPlugin({
-  name: 'vendors', // 公共模块的名称
-  chunks: chunks,  // chunks是需要提取的模块
-  minChunks: chunks.length
-}),
-
-```
-
-这里还要做一个特别说明，我们每次更新资源文件，为了去缓存，都会给文件生成`hash`值，例如：
-
-``` stylus
-<script type='text/javascript' src='vendors.61714a310523a3df9869.js' charset='utf-8'></script>
-<script type='text/javascript' src='vendors.js?f3aaf25de220e214f84e' charset='utf-8'></script>
-```
-这两者都是为了去缓存，唯一的区别的生成的文件名不一样，有些项目，为了可以能出严重BUG时第一时间回滚，以`文件名`+`hash`的方式储存，每次生成都不会覆盖之前的代码，以方便查BUG或者回滚。
-另一种方式，就是以`文件名`+`?hash`的方式储存，每次都会覆盖之前生成的资源，方便在某些特殊项目使用。
-我在`webpack.base.conf.js`也已经注释说明了。
-
-``` stylus
-module.exports = {
-  entry: entries,
-  output: {
-    path: config.build.assetsRoot,
-    publicPath: config.build.assetsPublicPath,
-	/* ---- 生成的例子 vendors.61714a310523a3df9869.js --- */
-    //filename: '[name].[hash].js'
-	/* ---- 生成的例子 vendors.js?f3aaf25de220e214f84e --- */
-    filename: '[name].js'
-  }
-}
-```
 ## 结束言
 不知不觉时间又过去，啰嗦一堆堆的，每个项目需求都不一样，配置也会有许不同，也希望更多的朋友分享自己的代码和想法出来哈，也可以一起交流。
 
